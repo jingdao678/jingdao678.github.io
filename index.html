@@ -152,6 +152,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-springcloud-docker-eclipse一些问题" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/07/springcloud-docker-eclipse一些问题/">springcloud+docker+eclipse一些问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/07/springcloud-docker-eclipse一些问题/" class="archive-article-date">
+  	<time datetime="2018-12-06T18:56:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#<center>springcloud+docker+eclipse</center><br>Application.java代码如下</p>
+<p> package com.thoughtmechanix.simpleservice;</p>
+<p>import org.springframework.boot.SpringApplication;<br>import org.springframework.boot.autoconfigure.SpringBootApplication;<br>import org.springframework.web.bind.annotation.RequestMapping;<br>import org.springframework.web.bind.annotation.RequestMethod;<br>import org.springframework.web.bind.annotation.RestController;<br>import org.springframework.web.bind.annotation.PathVariable;</p>
+<p>@SpringBootApplication<br>@RestController<br>@RequestMapping(value=”hello”)<br>public class Application {</p>
+<pre><code>public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+}
+
+@RequestMapping(value=&quot;/{firstName}/{lastName}&quot;,method = RequestMethod.GET)
+public String hello( @PathVariable(&quot;firstName&quot;) String firstName,
+                     @PathVariable(&quot;lastName&quot;) String lastName) {
+
+    return String.format(&quot;{\&quot;message\&quot;:\&quot;Hello %s %s\&quot;}&quot;, firstName, lastName);
+}
+</code></pre><p>}</p>
+<p>ubuntu@linux:~/new2018/git_springcloud/spmia-chapter1$ ls<br>docker  pom.xml  README.md  simpleservice  target<br>ubuntu@linux:~/new2018/git_springcloud/spmia-chapter1$<br>项目根目录为spmia-chapter1<br>在根目录通过以下命令启动docker容器<br>docker-compose  -f  docker/common/docker-compose.yml up</p>
+<p>控制台打印以下，可以看到正常启动springcloud项目<br>ubuntu@linux:~/new2018/git_springcloud/spmia-chapter1$ docker-compose  -f  docker/common/docker-compose.yml up<br>Starting common_simpleservice_1 … done<br>Attaching to common_simpleservice_1<br>simpleservice_1  | <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>simpleservice_1  | Starting simple-service<br>simpleservice_1  | <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>simpleservice_1  |<br>simpleservice_1  |   .   <strong>__          _            </strong> _ _<br>simpleservice_1  |  /\ / <strong>_’_ </strong> _ _(_)_ <strong>  </strong> _ \ \ \ \<br>simpleservice_1  | ( ( )_<strong> | ‘_ | ‘<em>| | ‘</em> \/ _` | \ \ \ \<br>simpleservice_1  |  \/  _</strong>)| |<em>)| | | | | || (</em>| |  ) ) ) )<br>simpleservice_1  |   ‘  |<strong>__| .</strong>|<em>| |</em>|<em>| |</em>__, | / / / /<br>simpleservice_1  |  =========|_|==============|___/=/_/_/_/<br>simpleservice_1  |  :: Spring Boot ::        (v1.4.4.RELEASE)<br>simpleservice_1  |<br>simpleservice_1  | 2018-12-06 19:17:04.694  INFO 7 — [           main] c.t.simpleservice.Application            : Starting Application v0.0.1-SNAPSHOT on df7b33572b9b with PID 7 (/usr/local/simple-service/simple-service-0.0.1-SNAPSHOT.jar started by root in /)<br>simpleservice_1  | 2018-12-06 19:17:04.697  INFO 7 — [           main] c.t.simpleservice.Application            : No active profile set, falling back to default profiles: default<br>simpleservice_1  | 2018-12-06 19:17:04.849  INFO 7 — [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@69663380: startup date [Thu Dec 06 19:17:04 GMT 2018]; root of context hierarchy<br>simpleservice_1  | 2018-12-06 19:17:08.094  INFO 7 — [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)<br>simpleservice_1  | 2018-12-06 19:17:08.128  INFO 7 — [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat<br>simpleservice_1  | 2018-12-06 19:17:08.130  INFO 7 — [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11<br>simpleservice_1  | 2018-12-06 19:17:08.440  INFO 7 — [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext<br>simpleservice_1  | 2018-12-06 19:17:08.446  INFO 7 — [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3625 ms<br>simpleservice_1  | 2018-12-06 19:17:08.719  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: ‘dispatcherServlet’ to [/]<br>simpleservice_1  | 2018-12-06 19:17:08.732  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘characterEncodingFilter’ to: [/<em>]<br>simpleservice_1  | 2018-12-06 19:17:08.734  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘hiddenHttpMethodFilter’ to: [/</em>]<br>simpleservice_1  | 2018-12-06 19:17:08.734  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘httpPutFormContentFilter’ to: [/<em>]<br>simpleservice_1  | 2018-12-06 19:17:08.735  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘requestContextFilter’ to: [/</em>]<br>simpleservice_1  | 2018-12-06 19:17:09.150  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@69663380: startup date [Thu Dec 06 19:17:04 GMT 2018]; root of context hierarchy<br>simpleservice_1  | 2018-12-06 19:17:09.230  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped “{[/hello/{firstName}/{lastName}],methods=[GET]}” onto public java.lang.String com.thoughtmechanix.simpleservice.Application.hello(java.lang.String,java.lang.String)<br>simpleservice_1  | 2018-12-06 19:17:09.232  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped “{[/error],produces=[text/html]}” onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)<br>simpleservice_1  | 2018-12-06 19:17:09.233  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped “{[/error]}” onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)<br>simpleservice_1  | 2018-12-06 19:17:09.270  INFO 7 — [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/<strong>] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]<br>simpleservice_1  | 2018-12-06 19:17:09.270  INFO 7 — [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/</strong>] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]<br>simpleservice_1  | 2018-12-06 19:17:09.362  INFO 7 — [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]<br>simpleservice_1  | 2018-12-06 19:17:09.585  INFO 7 — [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup<br>simpleservice_1  | 2018-12-06 19:17:09.677  INFO 7 — [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)<br>simpleservice_1  | 2018-12-06 19:17:09.680  INFO 7 — [           main] c.t.simpleservice.Application            : Started Application in 5.884 seconds (JVM running for 8.0)</p>
+<p>然后访问<br><a href="http://localhost:8080/hello/aaa/bbb/" target="_blank" rel="noopener">http://localhost:8080/hello/aaa/bbb/</a><br>输出<br>{“message”:”Hello aaa bbb”}<br>测试通过<strong><strong><strong><strong>**</strong></strong></strong></strong></p>
+<p>遇到的一些问题</p>
+<p>Docker：Failed to start docker.service: Unit docker.service is masked.<br>解决方法<br>执行如下三条指令</p>
+<p>systemctl unmask docker.service<br>systemctl unmask docker.socket<br>systemctl start docker.service</p>
+<p>eclipse桌面快捷启动报错，才发现是jdk版本问题，用的是jdk11了，把它切换回jdk8就行，通过以下命令切换jdk版本<br>$ sudo update-alternatives –config   java  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/07/springcloud-docker-eclipse一些问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo-install" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
