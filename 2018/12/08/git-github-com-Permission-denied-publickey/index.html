@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>springcloud+docker+eclipse一些问题 | Hexo</title>
+  <title>git@github.com: Permission denied (publickey) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#springcloud+docker+eclipseApplication.java代码如下  package com.thoughtmechanix.simpleservice; import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootAp">
+  <meta name="description" content="#一次ubuntu下git不能提交hexo博客root@linux:/home/ubuntu/new2018/blog# hexo dINFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying files from public folder…INFO  Copying files from extend dirs…On">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springcloud+docker+eclipse一些问题">
-<meta property="og:url" content="http://yoursite.com/2018/12/07/springcloud-docker-eclipse一些问题/index.html">
+<meta property="og:title" content="git@github.com: Permission denied (publickey)">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/git-github-com-Permission-denied-publickey/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#springcloud+docker+eclipseApplication.java代码如下  package com.thoughtmechanix.simpleservice; import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootAp">
+<meta property="og:description" content="#一次ubuntu下git不能提交hexo博客root@linux:/home/ubuntu/new2018/blog# hexo dINFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying files from public folder…INFO  Copying files from extend dirs…On">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-06T19:47:31.526Z">
+<meta property="og:updated_time" content="2018-12-08T07:15:45.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="springcloud+docker+eclipse一些问题">
-<meta name="twitter:description" content="#springcloud+docker+eclipseApplication.java代码如下  package com.thoughtmechanix.simpleservice; import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootAp">
+<meta name="twitter:title" content="git@github.com: Permission denied (publickey)">
+<meta name="twitter:description" content="#一次ubuntu下git不能提交hexo博客root@linux:/home/ubuntu/new2018/blog# hexo dINFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying files from public folder…INFO  Copying files from extend dirs…On">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,48 +154,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-springcloud-docker-eclipse一些问题" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-git-github-com-Permission-denied-publickey" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      springcloud+docker+eclipse一些问题
+      git@github.com: Permission denied (publickey)
     </h1>
   
 
         
-        <a href="/2018/12/07/springcloud-docker-eclipse一些问题/" class="archive-article-date">
-  	<time datetime="2018-12-06T18:56:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
+        <a href="/2018/12/08/git-github-com-Permission-denied-publickey/" class="archive-article-date">
+  	<time datetime="2018-12-08T07:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#<center>springcloud+docker+eclipse</center><br>Application.java代码如下</p>
-<p> package com.thoughtmechanix.simpleservice;</p>
-<p>import org.springframework.boot.SpringApplication;<br>import org.springframework.boot.autoconfigure.SpringBootApplication;<br>import org.springframework.web.bind.annotation.RequestMapping;<br>import org.springframework.web.bind.annotation.RequestMethod;<br>import org.springframework.web.bind.annotation.RestController;<br>import org.springframework.web.bind.annotation.PathVariable;</p>
-<p>@SpringBootApplication<br>@RestController<br>@RequestMapping(value=”hello”)<br>public class Application {</p>
-<pre><code>public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
-}
-
-@RequestMapping(value=&quot;/{firstName}/{lastName}&quot;,method = RequestMethod.GET)
-public String hello( @PathVariable(&quot;firstName&quot;) String firstName,
-                     @PathVariable(&quot;lastName&quot;) String lastName) {
-
-    return String.format(&quot;{\&quot;message\&quot;:\&quot;Hello %s %s\&quot;}&quot;, firstName, lastName);
-}
-</code></pre><p>}</p>
-<p>ubuntu@linux:~/new2018/git_springcloud/spmia-chapter1$ ls<br>docker  pom.xml  README.md  simpleservice  target<br>ubuntu@linux:~/new2018/git_springcloud/spmia-chapter1$<br>项目根目录为spmia-chapter1<br>在根目录通过以下命令启动docker容器<br>docker-compose  -f  docker/common/docker-compose.yml up</p>
-<p>控制台打印以下，可以看到正常启动springcloud项目<br>ubuntu@linux:~/new2018/git_springcloud/spmia-chapter1$ docker-compose  -f  docker/common/docker-compose.yml up<br>Starting common_simpleservice_1 … done<br>Attaching to common_simpleservice_1<br>simpleservice_1  | <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>simpleservice_1  | Starting simple-service<br>simpleservice_1  | <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>simpleservice_1  |<br>simpleservice_1  |   .   <strong>__          _            </strong> _ _<br>simpleservice_1  |  /\ / <strong>_’_ </strong> _ _(_)_ <strong>  </strong> _ \ \ \ \<br>simpleservice_1  | ( ( )_<strong> | ‘_ | ‘<em>| | ‘</em> \/ _` | \ \ \ \<br>simpleservice_1  |  \/  _</strong>)| |<em>)| | | | | || (</em>| |  ) ) ) )<br>simpleservice_1  |   ‘  |<strong>__| .</strong>|<em>| |</em>|<em>| |</em>__, | / / / /<br>simpleservice_1  |  =========|_|==============|___/=/_/_/_/<br>simpleservice_1  |  :: Spring Boot ::        (v1.4.4.RELEASE)<br>simpleservice_1  |<br>simpleservice_1  | 2018-12-06 19:17:04.694  INFO 7 — [           main] c.t.simpleservice.Application            : Starting Application v0.0.1-SNAPSHOT on df7b33572b9b with PID 7 (/usr/local/simple-service/simple-service-0.0.1-SNAPSHOT.jar started by root in /)<br>simpleservice_1  | 2018-12-06 19:17:04.697  INFO 7 — [           main] c.t.simpleservice.Application            : No active profile set, falling back to default profiles: default<br>simpleservice_1  | 2018-12-06 19:17:04.849  INFO 7 — [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@69663380: startup date [Thu Dec 06 19:17:04 GMT 2018]; root of context hierarchy<br>simpleservice_1  | 2018-12-06 19:17:08.094  INFO 7 — [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)<br>simpleservice_1  | 2018-12-06 19:17:08.128  INFO 7 — [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat<br>simpleservice_1  | 2018-12-06 19:17:08.130  INFO 7 — [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11<br>simpleservice_1  | 2018-12-06 19:17:08.440  INFO 7 — [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext<br>simpleservice_1  | 2018-12-06 19:17:08.446  INFO 7 — [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3625 ms<br>simpleservice_1  | 2018-12-06 19:17:08.719  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: ‘dispatcherServlet’ to [/]<br>simpleservice_1  | 2018-12-06 19:17:08.732  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘characterEncodingFilter’ to: [/<em>]<br>simpleservice_1  | 2018-12-06 19:17:08.734  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘hiddenHttpMethodFilter’ to: [/</em>]<br>simpleservice_1  | 2018-12-06 19:17:08.734  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘httpPutFormContentFilter’ to: [/<em>]<br>simpleservice_1  | 2018-12-06 19:17:08.735  INFO 7 — [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: ‘requestContextFilter’ to: [/</em>]<br>simpleservice_1  | 2018-12-06 19:17:09.150  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@69663380: startup date [Thu Dec 06 19:17:04 GMT 2018]; root of context hierarchy<br>simpleservice_1  | 2018-12-06 19:17:09.230  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped “{[/hello/{firstName}/{lastName}],methods=[GET]}” onto public java.lang.String com.thoughtmechanix.simpleservice.Application.hello(java.lang.String,java.lang.String)<br>simpleservice_1  | 2018-12-06 19:17:09.232  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped “{[/error],produces=[text/html]}” onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)<br>simpleservice_1  | 2018-12-06 19:17:09.233  INFO 7 — [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped “{[/error]}” onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)<br>simpleservice_1  | 2018-12-06 19:17:09.270  INFO 7 — [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/<strong>] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]<br>simpleservice_1  | 2018-12-06 19:17:09.270  INFO 7 — [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/</strong>] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]<br>simpleservice_1  | 2018-12-06 19:17:09.362  INFO 7 — [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]<br>simpleservice_1  | 2018-12-06 19:17:09.585  INFO 7 — [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup<br>simpleservice_1  | 2018-12-06 19:17:09.677  INFO 7 — [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)<br>simpleservice_1  | 2018-12-06 19:17:09.680  INFO 7 — [           main] c.t.simpleservice.Application            : Started Application in 5.884 seconds (JVM running for 8.0)</p>
-<p>然后访问<br><a href="http://localhost:8080/hello/aaa/bbb/" target="_blank" rel="noopener">http://localhost:8080/hello/aaa/bbb/</a><br>输出<br>{“message”:”Hello aaa bbb”}<br>测试通过<strong><strong><strong><strong>**</strong></strong></strong></strong></p>
-<p>遇到的一些问题</p>
-<p>Docker：Failed to start docker.service: Unit docker.service is masked.<br>解决方法<br>执行如下三条指令</p>
-<p>systemctl unmask docker.service<br>systemctl unmask docker.socket<br>systemctl start docker.service</p>
-<p>eclipse桌面快捷启动报错，才发现是jdk版本问题，用的是jdk11了，把它切换回jdk8就行，通过以下命令切换jdk版本<br>$ sudo update-alternatives –config   java  </p>
+        <p>#一次ubuntu下git不能提交hexo博客<br>root@linux:/home/ubuntu/new2018/blog# hexo d<br>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…<br>On branch master<br>nothing to commit, working tree clean<br><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.<br>FATAL Something’s wrong. Maybe you can find the solution here: <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">http://hexo.io/docs/troubleshooting.html</a><br>Error: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.</p>
+<pre><code>at ChildProcess.&lt;anonymous&gt; (/home/ubuntu/new2018/blog/node_modules/hexo-util/lib/spawn.js:37:17)
+at ChildProcess.emit (events.js:182:13)
+at maybeClose (internal/child_process.js:962:16)
+at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5)
+</code></pre><p>root@linux:/home/ubuntu/new2018/blog# git config –global user.name “xx”<br>root@linux:/home/ubuntu/new2018/blog# git config –global user.name “xx”<br>root@linux:/home/ubuntu/new2018/blog# git config –global user.email “<a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a>“<br>root@linux:/home/ubuntu/new2018/blog# ssh-keygen -t rsa -C “<a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a>“<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/root/.ssh/id_rsa):<br>/root/.ssh/id_rsa already exists.<br>Overwrite (y/n)? y<br>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:<br>Your identification has been saved in /root/.ssh/id_rsa.<br>Your public key has been saved in /root/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>SHA256:EvEGcdjX5B/pxWOL07tz+tLfgyrGWIOTba56Q6WFcOkY+I <a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a><br>The key’s randomart image is:<br>+—[RSA 2048]—-+<br>|      ++.  o. .  |<br>|      .=. …+ o |<br>|      . o.. = <em>oo|<br>|       o . o ++=o|<br>|      . S E  o+o |<br>|       .     </em>…|<br>|            @ .oo|<br>|           o =o<em>+|<br>|             oBO</em>|<br>+—-[SHA256]—–+<br>root@linux:/home/ubuntu/new2018/blog#  cat ~/.ssh/id_rsa.pub<br>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAxxAABAQDTkTXF8hgh5IF95lw6zA8pdywfbkpERQoWq2FHnZ7OaGPdq6lU1riMMOWucVe2+EQyUJn3KxhQR7HjudXEdgV09ZhQUrt2skhDj0o+6mhfgUHkroAnMts8cmbd6ZDetyjEGfg+1whGgeqvmooTq9LSqe5Y4WrmFjPFzMXUvlM0kI5ooXlKeSn0mY6iSlJmZJFtOdXyNo1d4kZ4StRS+QylHVKmcmNvAzCOUqNHyRRmpKznW6FLrCAxfIEubpHeZrcOXaGnlZH6oXUF4tgahv4NZnEl4nqpnAFBJp9eX0w3BFgEgLZsUcN5zjvMUcCxVqKE9jEemsppUmWE39ydP9nKuna9 <a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a><br>root@linux:/home/ubuntu/new2018/blog# ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>Hi jingdao678! You’ve successfully authenticated, but GitHub does not provide shell access.<br>root@linux:/home/ubuntu/new2018/blog# git remote -v<br>root@linux:/home/ubuntu/new2018/blog# hexo c<br>Usage: hexo <command></p>
+<p>Commands:<br>  clean     Remove generated files and cache.<br>  config    Get or set configurations.<br>  deploy    Deploy your website.<br>  generate  Generate static files.<br>  help      Get help on a command.<br>  init      Create a new Hexo folder.<br>  list      List the information of the site<br>  migrate   Migrate your site from other system to Hexo.<br>  new       Create a new post.<br>  publish   Moves a draft post from _drafts to _posts folder.<br>  render    Render files with renderer plugins.<br>  server    Start the server.<br>  version   Display version information.</p>
+<p>Global Options:<br>  –config  Specify config file instead of using _config.yml<br>  –cwd     Specify the CWD<br>  –debug   Display all verbose messages in the terminal<br>  –draft   Display draft posts<br>  –safe    Disable all plugins and scripts<br>  –silent  Hide output on console</p>
+<p>For more help, you can use ‘hexo help [command]’ for the detailed information<br>or you can check the docs: <a href="http://hexo.io/docs/" target="_blank" rel="noopener">http://hexo.io/docs/</a><br>root@linux:/home/ubuntu/new2018/blog# hexo clean<br>INFO  Deleted database.<br>INFO  Deleted public folder.<br>root@linux:/home/ubuntu/new2018/blog# hexo g<br>INFO  Start processing<br>INFO  Files loaded in 235 ms<br>INFO  Generated: content.json<br>INFO  Generated: index.html<br>INFO  Generated: archives/index.html<br>INFO  Generated: fonts/default-skin.b257fa.svg<br>INFO  Generated: img/default-skin.png<br>INFO  Generated: fonts/iconfont.16acc2.ttf<br>INFO  Generated: fonts/tooltip.4004ff.svg<br>INFO  Generated: fonts/iconfont.8c627f.woff<br>INFO  Generated: fonts/iconfont.45d7ee.svg<br>INFO  Generated: img/preloader.gif<br>INFO  Generated: img/scrollbar_arrow.png<br>INFO  Generated: fonts/iconfont.b322fa.eot<br>INFO  Generated: archives/2018/11/index.html<br>INFO  Generated: archives/2018/12/index.html<br>INFO  Generated: archives/2018/index.html<br>INFO  Generated: assets/img/head.jpg<br>INFO  Generated: 2018/11/13/hexo-install/index.html<br>INFO  Generated: 2018/12/07/springcloud-docker-eclipse一些问题/index.html<br>INFO  Generated: 2018/11/13/hello-world/index.html<br>INFO  Generated: slider.e37972.js<br>INFO  Generated: main.0cf68a.css<br>INFO  Generated: main.0cf68a.js<br>INFO  Generated: mobile.992cbe.js<br>INFO  23 files generated in 278 ms<br>root@linux:/home/ubuntu/new2018/blog# hexo d<br>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…<br>On branch master<br>nothing to commit, working tree clean<br>To github.com:jingdao678/jingdao678.github.io.git</p>
+<ul>
+<li>1c7cc18…973d321 HEAD -&gt; master (forced update)<br>Branch ‘master’ set up to track remote branch ‘master’ from <a href="mailto:&#39;git@github.com" target="_blank" rel="noopener">&#39;git@github.com</a>:jingdao678/jingdao678.github.io.git’.<br>INFO  Deploy done: git<br>root@linux:/home/ubuntu/new2018/blog# </li>
+</ul>
 
       
 
@@ -275,7 +267,7 @@ public String hello( @PathVariable(&quot;firstName&quot;) String firstName,
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/07/springcloud-docker-eclipse一些问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/08/git-github-com-Permission-denied-publickey/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,18 +281,9 @@ public String hello( @PathVariable(&quot;firstName&quot;) String firstName,
   
 <nav id="article-nav">
   
-    <a href="/2018/12/08/git-github-com-Permission-denied-publickey/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git@github.com: Permission denied (publickey)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/13/hexo-install/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo-install</div>
+    <a href="/2018/12/07/springcloud-docker-eclipse一些问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springcloud+docker+eclipse一些问题</div>
       <i class="icon-circle-right"></i>
     </a>
   

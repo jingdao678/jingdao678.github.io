@@ -152,6 +152,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-github-com-Permission-denied-publickey" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/08/git-github-com-Permission-denied-publickey/">git@github.com: Permission denied (publickey)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/08/git-github-com-Permission-denied-publickey/" class="archive-article-date">
+  	<time datetime="2018-12-08T07:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#一次ubuntu下git不能提交hexo博客<br>root@linux:/home/ubuntu/new2018/blog# hexo d<br>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…<br>On branch master<br>nothing to commit, working tree clean<br><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.<br>FATAL Something’s wrong. Maybe you can find the solution here: <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">http://hexo.io/docs/troubleshooting.html</a><br>Error: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.</p>
+<pre><code>at ChildProcess.&lt;anonymous&gt; (/home/ubuntu/new2018/blog/node_modules/hexo-util/lib/spawn.js:37:17)
+at ChildProcess.emit (events.js:182:13)
+at maybeClose (internal/child_process.js:962:16)
+at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5)
+</code></pre><p>root@linux:/home/ubuntu/new2018/blog# git config –global user.name “xx”<br>root@linux:/home/ubuntu/new2018/blog# git config –global user.name “xx”<br>root@linux:/home/ubuntu/new2018/blog# git config –global user.email “<a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a>“<br>root@linux:/home/ubuntu/new2018/blog# ssh-keygen -t rsa -C “<a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a>“<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/root/.ssh/id_rsa):<br>/root/.ssh/id_rsa already exists.<br>Overwrite (y/n)? y<br>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:<br>Your identification has been saved in /root/.ssh/id_rsa.<br>Your public key has been saved in /root/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>SHA256:EvEGcdjX5B/pxWOL07tz+tLfgyrGWIOTba56Q6WFcOkY+I <a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a><br>The key’s randomart image is:<br>+—[RSA 2048]—-+<br>|      ++.  o. .  |<br>|      .=. …+ o |<br>|      . o.. = <em>oo|<br>|       o . o ++=o|<br>|      . S E  o+o |<br>|       .     </em>…|<br>|            @ .oo|<br>|           o =o<em>+|<br>|             oBO</em>|<br>+—-[SHA256]—–+<br>root@linux:/home/ubuntu/new2018/blog#  cat ~/.ssh/id_rsa.pub<br>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAxxAABAQDTkTXF8hgh5IF95lw6zA8pdywfbkpERQoWq2FHnZ7OaGPdq6lU1riMMOWucVe2+EQyUJn3KxhQR7HjudXEdgV09ZhQUrt2skhDj0o+6mhfgUHkroAnMts8cmbd6ZDetyjEGfg+1whGgeqvmooTq9LSqe5Y4WrmFjPFzMXUvlM0kI5ooXlKeSn0mY6iSlJmZJFtOdXyNo1d4kZ4StRS+QylHVKmcmNvAzCOUqNHyRRmpKznW6FLrCAxfIEubpHeZrcOXaGnlZH6oXUF4tgahv4NZnEl4nqpnAFBJp9eX0w3BFgEgLZsUcN5zjvMUcCxVqKE9jEemsppUmWE39ydP9nKuna9 <a href="mailto:xx@qq.com" target="_blank" rel="noopener">xx@qq.com</a><br>root@linux:/home/ubuntu/new2018/blog# ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>Hi jingdao678! You’ve successfully authenticated, but GitHub does not provide shell access.<br>root@linux:/home/ubuntu/new2018/blog# git remote -v<br>root@linux:/home/ubuntu/new2018/blog# hexo c<br>Usage: hexo <command></p>
+<p>Commands:<br>  clean     Remove generated files and cache.<br>  config    Get or set configurations.<br>  deploy    Deploy your website.<br>  generate  Generate static files.<br>  help      Get help on a command.<br>  init      Create a new Hexo folder.<br>  list      List the information of the site<br>  migrate   Migrate your site from other system to Hexo.<br>  new       Create a new post.<br>  publish   Moves a draft post from _drafts to _posts folder.<br>  render    Render files with renderer plugins.<br>  server    Start the server.<br>  version   Display version information.</p>
+<p>Global Options:<br>  –config  Specify config file instead of using _config.yml<br>  –cwd     Specify the CWD<br>  –debug   Display all verbose messages in the terminal<br>  –draft   Display draft posts<br>  –safe    Disable all plugins and scripts<br>  –silent  Hide output on console</p>
+<p>For more help, you can use ‘hexo help [command]’ for the detailed information<br>or you can check the docs: <a href="http://hexo.io/docs/" target="_blank" rel="noopener">http://hexo.io/docs/</a><br>root@linux:/home/ubuntu/new2018/blog# hexo clean<br>INFO  Deleted database.<br>INFO  Deleted public folder.<br>root@linux:/home/ubuntu/new2018/blog# hexo g<br>INFO  Start processing<br>INFO  Files loaded in 235 ms<br>INFO  Generated: content.json<br>INFO  Generated: index.html<br>INFO  Generated: archives/index.html<br>INFO  Generated: fonts/default-skin.b257fa.svg<br>INFO  Generated: img/default-skin.png<br>INFO  Generated: fonts/iconfont.16acc2.ttf<br>INFO  Generated: fonts/tooltip.4004ff.svg<br>INFO  Generated: fonts/iconfont.8c627f.woff<br>INFO  Generated: fonts/iconfont.45d7ee.svg<br>INFO  Generated: img/preloader.gif<br>INFO  Generated: img/scrollbar_arrow.png<br>INFO  Generated: fonts/iconfont.b322fa.eot<br>INFO  Generated: archives/2018/11/index.html<br>INFO  Generated: archives/2018/12/index.html<br>INFO  Generated: archives/2018/index.html<br>INFO  Generated: assets/img/head.jpg<br>INFO  Generated: 2018/11/13/hexo-install/index.html<br>INFO  Generated: 2018/12/07/springcloud-docker-eclipse一些问题/index.html<br>INFO  Generated: 2018/11/13/hello-world/index.html<br>INFO  Generated: slider.e37972.js<br>INFO  Generated: main.0cf68a.css<br>INFO  Generated: main.0cf68a.js<br>INFO  Generated: mobile.992cbe.js<br>INFO  23 files generated in 278 ms<br>root@linux:/home/ubuntu/new2018/blog# hexo d<br>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…<br>On branch master<br>nothing to commit, working tree clean<br>To github.com:jingdao678/jingdao678.github.io.git</p>
+<ul>
+<li>1c7cc18…973d321 HEAD -&gt; master (forced update)<br>Branch ‘master’ set up to track remote branch ‘master’ from <a href="mailto:&#39;git@github.com" target="_blank" rel="noopener">&#39;git@github.com</a>:jingdao678/jingdao678.github.io.git’.<br>INFO  Deploy done: git<br>root@linux:/home/ubuntu/new2018/blog# </li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/08/git-github-com-Permission-denied-publickey/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-springcloud-docker-eclipse一些问题" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
