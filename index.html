@@ -152,6 +152,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-postman-ubuntu-install" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/09/postman-ubuntu-install/">postman_ubuntu_install</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/09/postman-ubuntu-install/" class="archive-article-date">
+  	<time datetime="2018-12-09T02:40:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#ubuntu安装postman以及创建启动图标<br>shared libraries libgconf-2.so.4 is missing<br>我使用的是Ubuntu x64。最简单的使用方法 $sudo apt install libgconf2-4 来安装libgconf。</p>
+<p>ubuntu16.04下postman安装方式:<br>基本步骤:<br>1):官网下载软件包:<br><a href="https://www.getpostman.com/apps" target="_blank" rel="noopener">https://www.getpostman.com/apps</a></p>
+<p>2):解压安装:</p>
+<p>sudo tar -xzf Postman-linux-x64-6.0.10.tar.gz<br>    3):进入解压后的Postman文件夹打开终端,启动Postman</p>
+<p>./Postman/Postman<br>    4):创建启动图标,便于快速启动</p>
+<p>  建立软链接,创建解压后的Postman文件中的Postman到/usr/bin/目录下</p>
+<h2 id="sudo-ln-s-home-c-Downloads-Postman-Postman-usr-bin"><a href="#sudo-ln-s-home-c-Downloads-Postman-Postman-usr-bin" class="headerlink" title="sudo ln -s  /home/c/Downloads/Postman/Postman   /usr/bin/"></a>sudo ln -s  /home/c/Downloads/Postman/Postman   /usr/bin/</h2><p>首先下载postman，选择Linux 64位</p>
+<p>ubuntu安装postman以及创建启动图标<br>进入下载目录，解压该文件sudo tar -xzf postman.tar.gz -C /xuan/xuan-soft</p>
+<p>ubuntu安装postman以及创建启动图标<br>进入解压目录，执行./Postman,软件就运行了，到此软件就安装完成了，但是这样没次都要进入这个目录，且没有启动器没有该应用</p>
+<p>ubuntu安装postman以及创建启动图标<br>ubuntu安装postman以及创建启动图标<br>删除解压包</p>
+<p>ubuntu安装postman以及创建启动图标<br>创建全局变量，也就是在任何地方都可以执行postman，不用去到安装目录，执行</p>
+<p>sudo ln -s /xuan/xuan-soft/Postman/Postman /usr/bin/postman</p>
+<p>ubuntu安装postman以及创建启动图标<br>添加启动器应用图标，也就是可以从启动器快速启动，执行</p>
+<p>vim /usr/share/applications/postman.desktop</p>
+<p>并添加如下内容</p>
+<p>[Desktop Entry]</p>
+<p>Encoding=UTF-8</p>
+<p>Name=Postman</p>
+<p>Exec=postman</p>
+<p>Icon=/xuan/xuan-soft/Postman/resources/app/assets/icon.png</p>
+<p>Terminal=false</p>
+<p>Type=Application</p>
+<p>Categories=Development;</p>
+<p>0ubuntu 安装使用vim编辑器<br>ubuntu安装postman以及创建启动图标<br>ubuntu安装postman以及创建启动图标<br>再到启动器搜索，就可以找到该应用了</p>
+<p>ubuntu安装postman以及创建启动图标<br>END<br>注意事项<br>解压目录及安装目录，可自行更改，一般默认opt目录</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/09/postman-ubuntu-install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git-github-com-Permission-denied-publickey" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
