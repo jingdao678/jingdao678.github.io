@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-install-mysql-20190103" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/03/install-mysql-20190103/">install_mysql_20190103</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/03/install-mysql-20190103/" class="archive-article-date">
+  	<time datetime="2019-01-03T14:22:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装mysql命令<br>ubuntu@linux:/$ sudo apt-get install mysql-server<br>Reading package lists… Done<br>Building dependency tree<br>Reading state information… Done<br>The following additional packages will be installed:<br>  libhtml-template-perl libmecab2 mysql-client-5.7 mysql-server-5.7<br>  mysql-server-core-5.7<br>Suggested packages:</p>
+<p>MYSQL几个重要配置文件及其位置<br>Setting up mysql-client-5.7 (5.7.24-2) …<br>Setting up mysql-server-5.7 (5.7.24-2) …<br>Installing new version of config file /etc/apparmor.d/usr.sbin.mysqld …<br>Installing new version of config file /etc/init.d/mysql …</p>
+<p>Configuration file ‘/etc/mysql/mysql.cnf’<br> ==&gt; Deleted (by you or by a script) since installation.<br> ==&gt; Package distributor has shipped an updated version.<br>   What would you like to do about it ?  Your options are:<br>    Y or I  : install the package maintainer’s version<br>    N or O  : keep your currently-installed version<br>      D     : show the differences between the versions<br>      Z     : start a shell to examine the situation<br> The default action is to keep your current version.<br>*** mysql.cnf (Y/I/N/O/D/Z) [default=N] ? Y<br>Installing new version of config file /etc/mysql/mysql.cnf …</p>
+<p>Configuration file ‘/etc/mysql/mysql.conf.d/mysqld.cnf’<br> ==&gt; Modified (by you or by a script) since installation.<br> ==&gt; Package distributor has shipped an updated version.<br>   What would you like to do about it ?  Your options are:<br>    Y or I  : install the package maintainer’s version<br>    N or O  : keep your currently-installed version<br>      D     : show the differences between the versions<br>      Z     : start a shell to examine the situation<br> The default action is to keep your current version.<br><strong><em> mysqld.cnf (Y/I/N/O/D/Z) [default=N] ?<br>     D     : show the differences between the versions<br>      Z     : start a shell to examine the situation<br> The default action is to keep your current version.
+</em></strong> mysqld.cnf (Y/I/N/O/D/Z) [default=N] ? Y<br>Installing new version of config file /etc/mysql/mysql.conf.d/mysqld.cnf …<br>update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode<br>Checking if update is needed.<br>Checking server version.<br>Running queries to upgrade MySQL server.<br>o<br>Checking system database.<br>mysql.columns_priv                              </p>
+<p>通过用户名：root  密码:123456 登录mysql数据库</p>
+<p>Upgrade process completed successfully.<br>Checking if update is needed.<br>insserv: warning: script ‘mysqld’ missing LSB tags and overrides<br>insserv: warning: script ‘keepalived’ missing LSB tags and overrides<br>Setting up mysql-server (5.7.24-2) …<br>Processing triggers for systemd (239-7ubuntu15) …<br>Processing triggers for ureadahead (0.100.0-20) …<br>ubuntu@linux:/$ mysql -uroot -p<br>Enter password:<br>Welcome to the MySQL monitor.  Commands end with ; or \g.<br>Your MySQL connection id is 2<br>Server version: 5.7.24-2 (Ubuntu)</p>
+<p>Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.</p>
+<p>Oracle is a registered trademark of Oracle Corporation and/or its<br>affiliates. Other names may be trademarks of their respective<br>owners.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>mysql&gt; show databases;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| licz               |<br>| licz11             |<br>| menagerie          |<br>| mysql              |<br>| mysqltest          |<br>| ops                |<br>| performance_schema |<br>| sys                |<br>+——————–+<br>9 rows in set (0.18 sec)</p>
+<p>mysql&gt; </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/03/install-mysql-20190103/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-谷歌访问助手" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
